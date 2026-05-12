@@ -1,0 +1,267 @@
+/* Load Inter Variable from Google Fonts (open-source) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* =========================================================
+   DESIGN TOKENS — dark canvas system (from DESING.MD)
+   ========================================================= */
+:root {
+  /* Colors */
+  --color-canvas:        #111110;
+  --color-surface-1:     #1c1c1a;
+  --color-surface-2:     #262624;
+  --color-ink:           #ffffff;
+  --color-ink-muted:     #999999;
+  --color-hairline:      rgba(255, 255, 255, 0.10);
+  --color-hairline-soft: rgba(255, 255, 255, 0.06);
+  --color-accent-blue:   #0099ff;
+  --color-on-primary:    #111110;
+
+  /* Border radius */
+  --rounded-xs:   4px;
+  --rounded-sm:   6px;
+  --rounded-md:   10px;
+  --rounded-lg:   15px;
+  --rounded-xl:   20px;
+  --rounded-xxl:  30px;
+  --rounded-pill: 100px;
+  --rounded-full: 9999px;
+
+  /* Spacing */
+  --space-hair:    1px;
+  --space-xxs:     4px;
+  --space-xs:      8px;
+  --space-sm:      12px;
+  --space-md:      15px;
+  --space-lg:      20px;
+  --space-xl:      30px;
+  --space-xxl:     40px;
+  --space-section: 96px;
+}
+
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'cv01', 'cv05', 'cv09', 'cv11', 'ss03', 'ss07', 'dlig';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.30;
+  letter-spacing: -0.15px;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   LAYOUT UTILITIES
+   ========================================================= */
+.page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-xl);
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+.card {
+  background-color: var(--color-surface-1);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-xl);
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -1.0px;
+  color: var(--color-ink);
+}
+
+.card-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  letter-spacing: -0.14px;
+  margin-top: calc(-1 * var(--space-xs));
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  letter-spacing: -0.13px;
+}
+
+.field-input {
+  background-color: var(--color-surface-2);
+  color: var(--color-ink);
+  border: var(--space-hair) solid var(--color-hairline);
+  border-radius: var(--rounded-md);
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  font-feature-settings: 'cv01', 'cv05', 'cv09', 'cv11', 'ss03', 'ss07';
+  line-height: 1.30;
+  letter-spacing: -0.15px;
+  outline: none;
+  transition: box-shadow 0.15s ease;
+  width: 100%;
+}
+
+.field-input:focus {
+  box-shadow: 0 0 0 1px rgba(0, 153, 255, 0.15),
+              0 0 0 3px rgba(0, 153, 255, 0.08);
+  border-color: var(--color-accent-blue);
+}
+
+.field-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn-primary {
+  background-color: var(--color-ink);
+  color: var(--color-on-primary);
+  border: none;
+  border-radius: var(--rounded-pill);
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: -0.14px;
+  line-height: 1.0;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+  min-height: 44px;
+  width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--color-surface-2);
+  color: var(--color-ink);
+  border: none;
+  border-radius: var(--rounded-pill);
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: -0.14px;
+  line-height: 1.0;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+  min-height: 44px;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   DASHBOARD SPECIFIC
+   ========================================================= */
+.dashboard-info {
+  background-color: var(--color-surface-2);
+  border-radius: var(--rounded-md);
+  padding: var(--space-lg);
+}
+
+.body-text {
+  font-size: 15px;
+  color: var(--color-ink-muted);
+  line-height: 1.30;
+  letter-spacing: -0.15px;
+}
+
+.highlight {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+.error-msg {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff6b6b;
+  letter-spacing: -0.14px;
+  background-color: rgba(255, 107, 107, 0.08);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-xs) var(--space-sm);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 480px) {
+  .card {
+    padding: var(--space-lg);
+    border-radius: var(--rounded-lg);
+  }
+
+  .card-title {
+    font-size: 24px;
+    letter-spacing: -0.8px;
+  }
+}
