@@ -130,7 +130,11 @@ Una vez levantado el servidor, accede a:
 # Desde la carpeta backend/
 cd backend
 
-# Construir la imagen y levantar el contenedor
+# 1. Crear el archivo de variables de entorno a partir del ejemplo
+cp .env.example .env
+# Edita .env y establece un SECRET_KEY seguro y la contraseña de administrador
+
+# 2. Construir la imagen y levantar el contenedor
 docker compose up --build
 
 # En segundo plano
